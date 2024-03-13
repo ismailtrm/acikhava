@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Açık Hava Sineması Koltuk Kroki</title>
+<style>
+  /* CSS ile koltukların görünümünü ayarlayın */
+  .seat {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    display: inline-block;
+    background-color: white; /* Başlangıçta koltuklar boş olacak */
+    border: 1px solid black;
+  }
+</style>
+</head>
+<body>
+
+<h1>Açık Hava Sineması Koltuk Kroki</h1>
+
+<!-- HTML ile koltukları oluşturun -->
+<div id="seats"></div>
+
+<script>
+  // JavaScript ile koltuk organizasyonunu ayarlayın
+  const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'];
+  const seatsPerRow = [15, 15, 15, 15, 15, 16, 18, 20, 22, 24];
+  
+  const container = document.getElementById('seats');
+  
+  // Koltukları oluşturun ve dolu veya boş durumlarına göre stilini ayarlayın
+  for (let i = 0; i < rows.length; i++) {
+    for (let j = 1; j <= seatsPerRow[i]; j++) {
+      const seat = document.createElement('div');
+      seat.classList.add('seat');
+      seat.textContent = rows[i] + j;
+      
+      // Burada dolu veya boş olmasına göre stilini değiştirebilirsiniz
+      // Örneğin:
+      // if (/* koltuk dolu ise */) {
+      //   seat.style.backgroundColor = 'black';
+      // }
+      
+      container.appendChild(seat);
+    }
+    container.appendChild(document.createElement('br')); // Satır sonu için
+  }
+</script>
+
+</body>
+</html>
