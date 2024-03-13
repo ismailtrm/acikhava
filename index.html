@@ -7,17 +7,17 @@
 <style>
   /* CSS ile koltukların görünümünü ayarlayın */
   .seat {
-    width: 25px; /* Koltuk genişliği */
-    height: 25px; /* Koltuk yüksekliği */
-    margin: 3px; /* Koltuklar arası boşluk */
+    width: 40px; /* Koltuk genişliği */
+    height: 40px; /* Koltuk yüksekliği */
+    margin: 5px; /* Koltuklar arası boşluk */
     background-color: white; /* Başlangıçta koltuklar boş olacak */
     border: 1px solid black;
   }
   
   /* Bahçe haritası için stil */
   #garden-map {
-    width: auto; /* Genişlik */
-    max-width: 100%; /* Maksimum genişlik */
+    width: 100%; /* Genişlik */
+    max-width: 1000px; /* Maksimum genişlik */
     height: auto; /* Yükseklik */
     background-image: url('path/to/garden-map.jpg'); /* Bahçe haritası resmi */
     background-size: contain; /* Resmin boyutunu koru, ancak tamamen sığdır */
@@ -71,16 +71,6 @@
     }
     container.appendChild(rowDiv);
   }
-  
-  // Sayfa genişliğini koltuklara göre ayarla
-  window.addEventListener('resize', function() {
-    const gardenMap = document.getElementById('garden-map');
-    const numSeats = document.querySelectorAll('.seat').length;
-    const seatWidth = 25; // Koltuk genişliği
-    const margin = 3; // Koltuklar arası boşluk
-    const totalWidth = numSeats * (seatWidth + margin) + margin;
-    gardenMap.style.width = totalWidth + 'px';
-  });
 </script>
 
 </body>
