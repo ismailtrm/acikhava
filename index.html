@@ -19,11 +19,13 @@
     width: 500px; /* Genişlik */
     height: 400px; /* Yükseklik */
     background-image: url('path/to/garden-map.jpg'); /* Bahçe haritası resmi */
-    background-size: contain;
+    background-size: contain; /* Resmin boyutunu koru, ancak tamamen sığdır */
+    background-position: center; /* Resmi ortala */
     background-repeat: no-repeat;
     position: relative;
     display: flex; /* Flexbox kullanarak düzen oluştur */
     flex-wrap: wrap; /* Yetersiz alan durumunda satırları alt satıra geçir */
+    justify-content: center; /* Koltukları yatay olarak ortala */
   }
   
   /* Satır içindeki koltukları hizalamak için stil */
@@ -72,4 +74,3 @@
 
 </body>
 </html>
-
