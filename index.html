@@ -10,7 +10,6 @@
     width: 30px;
     height: 30px;
     margin: 5px;
-    display: inline-block;
     background-color: white; /* Başlangıçta koltuklar boş olacak */
     border: 1px solid black;
   }
@@ -19,10 +18,18 @@
   #garden-map {
     width: 500px; /* Genişlik */
     height: 400px; /* Yükseklik */
-    background-image: url('https://picsum.photos/200/300'); /* Bahçe haritası resmi */
+    background-image: url('path/to/garden-map.jpg'); /* Bahçe haritası resmi */
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
+    display: flex; /* Flexbox kullanarak düzen oluştur */
+    flex-wrap: wrap; /* Yetersiz alan durumunda satırları alt satıra geçir */
+  }
+  
+  /* Satır içindeki koltukları hizalamak için stil */
+  .row {
+    display: flex;
+    align-items: center; /* Dikey hizalama */
   }
 </style>
 </head>
@@ -44,6 +51,8 @@
   
   // Koltukları oluşturun ve dolu veya boş durumlarına göre stilini ayarlayın
   for (let i = 0; i < rows.length; i++) {
+    const rowDiv = document.createElement('div');
+    rowDiv.classList.add('row');
     for (let j = 1; j <= seatsPerRow[i]; j++) {
       const seat = document.createElement('div');
       seat.classList.add('seat');
@@ -55,11 +64,12 @@
       //   seat.style.backgroundColor = 'black';
       // }
       
-      container.appendChild(seat);
+      rowDiv.appendChild(seat);
     }
-    container.appendChild(document.createElement('br')); // Satır sonu için
+    container.appendChild(rowDiv);
   }
 </script>
 
 </body>
 </html>
+
