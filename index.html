@@ -11,7 +11,7 @@
     height: 40px; /* Koltuk yüksekliği */
     margin: 5px; /* Koltuklar arası boşluk */
     background-color: white; /* Başlangıçta koltuklar boş olacak */
-    border: 1px solid black;
+    border: 1px solid transparent; /* Kenarları yok */
   }
   
   /* Bahçe haritası için stil */
@@ -49,7 +49,7 @@
   // JavaScript ile koltuk organizasyonunu ayarlayın
   const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'];
   const seatsPerRow = [15, 15, 15, 15, 15, 16, 18, 20, 22, 24];
-  const shiftAmounts = [5, 5, 5, 5, 5, 4, 3, 2, 1, 0, 0]; // Her satırın kaydırılacak kutu sayısı
+  const shiftAmounts = [5, 5, 5, 5, 5, 4, 3, 2, 1, 1, 1]; // Her satırın kaydırılacak kutu sayısı
   
   const container = document.getElementById('garden-map');
   
@@ -63,6 +63,7 @@
     for (let k = 0; k < shiftAmount; k++) {
       const emptySeat = document.createElement('div');
       emptySeat.classList.add('seat');
+      emptySeat.style.visibility = 'hidden'; // Gizli kutu
       rowDiv.appendChild(emptySeat);
     }
     
