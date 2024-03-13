@@ -7,17 +7,18 @@
 <style>
   /* CSS ile koltukların görünümünü ayarlayın */
   .seat {
-    width: 30px;
-    height: 30px;
-    margin: 5px;
+    width: 25px; /* Koltuk genişliği */
+    height: 25px; /* Koltuk yüksekliği */
+    margin: 2px; /* Koltuklar arası boşluk */
     background-color: white; /* Başlangıçta koltuklar boş olacak */
     border: 1px solid black;
   }
   
   /* Bahçe haritası için stil */
   #garden-map {
-    width: 500px; /* Genişlik */
-    height: 400px; /* Yükseklik */
+    width: 100%; /* Genişlik */
+    max-width: 800px; /* Maksimum genişlik */
+    height: auto; /* Yükseklik */
     background-image: url('path/to/garden-map.jpg'); /* Bahçe haritası resmi */
     background-size: contain; /* Resmin boyutunu koru, ancak tamamen sığdır */
     background-position: center; /* Resmi ortala */
