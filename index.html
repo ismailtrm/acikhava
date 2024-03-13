@@ -17,7 +17,7 @@
   /* Bahçe haritası için stil */
   #garden-map {
     width: 100%; /* Genişlik */
-    max-width: 3000px; /* Maksimum genişlik */
+    max-width: 1000px; /* Maksimum genişlik */
     height: auto; /* Yükseklik */
     background-image: url('path/to/garden-map.jpg'); /* Bahçe haritası resmi */
     background-size: contain; /* Resmin boyutunu koru, ancak tamamen sığdır */
@@ -56,6 +56,17 @@
   for (let i = 0; i < rows.length; i++) {
     const rowDiv = document.createElement('div');
     rowDiv.classList.add('row');
+    
+    // Satır başlarını kaydırmak için boş koltuklar ekle
+    if (i < 5) {
+      for (let k = 0; k < i + 1; k++) {
+        const emptySeat = document.createElement('div');
+        emptySeat.classList.add('seat');
+        emptySeat.style.visibility = 'hidden'; // Görünmez boş koltuklar
+        rowDiv.appendChild(emptySeat);
+      }
+    }
+    
     for (let j = 1; j <= seatsPerRow[i]; j++) {
       const seat = document.createElement('div');
       seat.classList.add('seat');
