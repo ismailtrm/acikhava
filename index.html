@@ -11,7 +11,12 @@
     height: 40px; /* Koltuk yüksekliği */
     margin: 5px; /* Koltuklar arası boşluk */
     background-color: white; /* Başlangıçta koltuklar boş olacak */
-    border: 1px solid transparent; /* Kenarları yok */
+    border: 1px solid black; /* Tüm koltuklara kenar ekleyin */
+  }
+  
+  /* Numarasız kutuların kenarlarını silecek stil */
+  .seat.empty {
+    border: none;
   }
   
   /* Bahçe haritası için stil */
@@ -62,7 +67,7 @@
     // Satır başında boş kutu oluştur
     for (let k = 0; k < shiftAmount; k++) {
       const emptySeat = document.createElement('div');
-      emptySeat.classList.add('seat');
+      emptySeat.classList.add('seat', 'empty'); // Numarasız kutulara empty sınıfını ekle
       emptySeat.style.visibility = 'hidden'; // Gizli kutu
       rowDiv.appendChild(emptySeat);
     }
@@ -87,3 +92,4 @@
 
 </body>
 </html>
+
