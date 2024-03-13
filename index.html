@@ -14,6 +14,16 @@
     background-color: white; /* Başlangıçta koltuklar boş olacak */
     border: 1px solid black;
   }
+  
+  /* Bahçe haritası için stil */
+  #garden-map {
+    width: 500px; /* Genişlik */
+    height: 400px; /* Yükseklik */
+    background-image: url('https://picsum.photos/200/300'); /* Bahçe haritası resmi */
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+  }
 </style>
 </head>
 <body>
@@ -21,14 +31,16 @@
 <h1>Açık Hava Sineması Koltuk Kroki</h1>
 
 <!-- HTML ile koltukları oluşturun -->
-<div id="seats"></div>
+<div id="garden-map">
+  <!-- Koltuklar burada oluşturulacak -->
+</div>
 
 <script>
   // JavaScript ile koltuk organizasyonunu ayarlayın
   const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'];
   const seatsPerRow = [15, 15, 15, 15, 15, 16, 18, 20, 22, 24];
   
-  const container = document.getElementById('seats');
+  const container = document.getElementById('garden-map');
   
   // Koltukları oluşturun ve dolu veya boş durumlarına göre stilini ayarlayın
   for (let i = 0; i < rows.length; i++) {
