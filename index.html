@@ -7,9 +7,9 @@
 <style>
   /* CSS ile koltukların görünümünü ayarlayın */
   .seat {
-    width: 20px; /* Koltuk genişliği */
-    height: 20px; /* Koltuk yüksekliği */
-    margin: 2px; /* Koltuklar arası boşluk */
+    width: 25px; /* Koltuk genişliği */
+    height: 25px; /* Koltuk yüksekliği */
+    margin: 3px; /* Koltuklar arası boşluk */
     background-color: white; /* Başlangıçta koltuklar boş olacak */
     border: 1px solid black;
   }
@@ -76,8 +76,8 @@
   window.addEventListener('resize', function() {
     const gardenMap = document.getElementById('garden-map');
     const numSeats = document.querySelectorAll('.seat').length;
-    const seatWidth = 20; // Koltuk genişliği
-    const margin = 2; // Koltuklar arası boşluk
+    const seatWidth = 25; // Koltuk genişliği
+    const margin = 3; // Koltuklar arası boşluk
     const totalWidth = numSeats * (seatWidth + margin) + margin;
     gardenMap.style.width = totalWidth + 'px';
   });
