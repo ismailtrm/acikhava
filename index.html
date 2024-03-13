@@ -49,6 +49,7 @@
   // JavaScript ile koltuk organizasyonunu ayarlayın
   const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'];
   const seatsPerRow = [15, 15, 15, 15, 15, 16, 18, 20, 22, 24];
+  const shiftRows = ['I', 'H', 'G', 'F']; // Kaydırılacak satırlar
   
   const container = document.getElementById('garden-map');
   
@@ -57,20 +58,19 @@
     const rowDiv = document.createElement('div');
     rowDiv.classList.add('row');
     
-    // Satır başlarını kaydırmak için boş koltuklar ekle
-    if (i < 5) {
-      for (let k = 0; k < i + 1; k++) {
-        const emptySeat = document.createElement('div');
-        emptySeat.classList.add('seat');
-        emptySeat.style.visibility = 'hidden'; // Görünmez boş koltuklar
-        rowDiv.appendChild(emptySeat);
-      }
+    // Eğer satır kaydırılması gereken bir satırsa, kaydırma yap
+    let shiftAmount = 0;
+    if (shiftRows.includes(rows[i])) {
+      shiftAmount = (5 - rows[i].charCodeAt(0) + 65) * 40; // ASCII'de 'A' kodu 65'tir
     }
     
     for (let j = 1; j <= seatsPerRow[i]; j++) {
       const seat = document.createElement('div');
       seat.classList.add('seat');
       seat.textContent = rows[i] + j;
+      
+      // Koltuk konumunu ayarla
+      seat.style.marginLeft = shiftAmount + 'px';
       
       // Burada dolu veya boş olmasına göre stilini değiştirebilirsiniz
       // Örneğin:
